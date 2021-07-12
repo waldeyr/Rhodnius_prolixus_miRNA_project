@@ -1,5 +1,6 @@
 # Rhodnius prolixus miRNA project
 
+![Rhodnius prolixus miRNA project](https://github.com/waldeyr/Rhodnius_prolixus_miRNA_project/raw/main/Diagrams/Pipeline.png)
 
 ### Creating the environment and installing the tools
 
