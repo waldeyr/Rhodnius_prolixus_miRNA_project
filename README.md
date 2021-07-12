@@ -64,7 +64,8 @@ bowtie-build --large-index --bmax 16777216 --dcv 256 --threads 4 reference/Rprol
 ### RPgland
 
 ```Bash
-mirdeep2/bin/mapper.pl RPGland_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RPGland.arf -o 4 -i -j -n -q -v```
+mirdeep2/bin/mapper.pl RPGland_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RPGland.arf -o 4 -i -j -n -q -v
+```
 
 ```Bash
 mirdeep2/bin/miRDeep2.pl RPGland_input_for_mirDeep2.fasta reference/RprolixusV48.fa RPGland.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none
