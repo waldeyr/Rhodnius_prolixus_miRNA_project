@@ -23,8 +23,13 @@
 ## Trimming fasta headers to avoid head length problems using mirDeep2
 `seqkit seq -i RprolixusV48.fa > out.fasta`
 
-## Converting fastq to fasta and trimm fasta headers to fit the head for mirDeep2
-`python3 fastq_to_fasta.py`
+## Parsing trimmed fastq files to fit them as fasta inputs for mirDeep2 using the in-house script *mirDepp2_fit_fastq_to_fasta.py*
+
+`python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP1G.fastq RP1G_input_for_mirDeep2.fasta RP1`
+
+`python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP2H.fastq RP2H_input_for_mirDeep2.fasta RP2`
+
+`python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RPGland.fastq RPGland_input_for_mirDeep2.fasta RPG`
 
 ## Create reference indexes
 `bowtie-build --large-index --bmax 16777216 --dcv 256 --threads 4 reference/RprolixusV48.fa reference/RprolixusV48`
