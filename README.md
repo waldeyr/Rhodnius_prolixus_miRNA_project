@@ -110,11 +110,19 @@ python3 getMirBaseEcdysozoaSpecies.py
 
 ```
 
-* Sequences from RNA central: tax_string:"triatominae" and so_rna_type_name:"NcRNA"
+## Identifying other small RNA (not miRNA) using Blast alignments of mapped reads against a set of small RNAs filtered for *Triatominae* downloaded from RNACentral
 
-`blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_type_nameNcRNA  -query RPGland_mapped.fasta  -max_target_seqs 5 -max_hsps 1 -evalue 1e-2 -perc_identity 80 -num_threads 4 -outfmt 6 -out RPGland_mapped_blast_results.tab`
+* Applied filter to download the sequences from RNA central: tax_string:"triatominae" and so_rna_type_name:"NcRNA"
 
-`blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_type_nameNcRNA  -query RP1G_mapped.fasta  -max_target_seqs 5 -max_hsps 1 -evalue 1e-2 -perc_identity 80 -num_threads 4 -outfmt 6 -out RP1G_mapped_blast_results.tab`
+```Bash
+blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_type_nameNcRNA  -query RPGland_mapped.fasta  -max_target_seqs 5 -max_hsps 1 -evalue 1e-2 -perc_identity 80 -num_threads 4 -outfmt 6 -out RPGland_mapped_blast_results.tab
+```
 
-`blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_type_nameNcRNA  -query RP2H_mapped.fasta  -max_target_seqs 5 -max_hsps 1 -evalue 1e-2 -perc_identity 80 -num_threads 4 -outfmt 6 -out RP2H_mapped_blast_results.tab`
+```Bash
+blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_type_nameNcRNA  -query RP1G_mapped.fasta  -max_target_seqs 5 -max_hsps 1 -evalue 1e-2 -perc_identity 80 -num_threads 4 -outfmt 6 -out RP1G_mapped_blast_results.tab
+```
+
+```Bash
+blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_type_nameNcRNA  -query RP2H_mapped.fasta  -max_target_seqs 5 -max_hsps 1 -evalue 1e-2 -perc_identity 80 -num_threads 4 -outfmt 6 -out RP2H_mapped_blast_results.tab
+```
 
