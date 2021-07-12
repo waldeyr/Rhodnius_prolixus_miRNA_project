@@ -32,9 +32,10 @@
 `python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RPGland.fastq RPGland_input_for_mirDeep2.fasta RPG`
 
 ## Create reference indexes
+
 `bowtie-build --large-index --bmax 16777216 --dcv 256 --threads 4 reference/RprolixusV48.fa reference/RprolixusV48`
 
-## Map reads to genome using mirDeep2 
+## Map reads to the Rhodnius prolixus genome (version 48) using mirDeep2 combined with a set of *Ecdysozoa* filtered miRNA downloaded from miRBase
 
 ### RPgland
 
