@@ -53,6 +53,12 @@ python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP2H.fastq RP2H_input_for_mirDeep
 python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RPGland.fastq RPGland_input_for_mirDeep2.fasta RPG
 ```
 
+## Parsing miRBase *Ecdysozoa* sequences to fit them as fasta inputs for mirDeep2 using the in-house script *adjustMirBaseEcdysozoaFastaHeaderFormirDeep2.py*
+
+```Bash
+python3 adjustMirBaseEcdysozoaFastaHeaderFormirDeep2.py
+```
+
 ## Create reference indexes
 
 ```Bash
@@ -94,6 +100,13 @@ mirdeep2/bin/miRDeep2.pl RP2H_input_for_mirDeep2.fasta reference/RprolixusV48.fa
 
 ```Bash
 python3 arf_to_fasta.py
+
+```
+
+## Get a tab separated file with miRBase *Ecdysozoa* Species names using the in-house script *getMirBaseEcdysozoaSpecies.py*
+
+```Bash
+python3 getMirBaseEcdysozoaSpecies.py
 
 ```
 
