@@ -1,11 +1,13 @@
 # Rhodnius prolixus miRNA project
 
-## Conda environment (https://www.anaconda.com/products/individual)
+
 
 ### Creating the environment and installing the tools
 
-* seqkit (version 0.16.1)
-* mirDeep2 (version 0.1.3)
+* [Conda environment](https://www.anaconda.com/products/individual)
+* [seqkit](https://bioinf.shenwei.me/seqkit/) (version 0.16.1)
+* [mirDeep2](https://www.mdc-berlin.de/content/mirdeep2-documentation) (version 0.1.3)
+* [Biopython](https://biopython.org) (version 1.78)
 
 `conda create -n bioinfo python=3.6`
 
@@ -54,11 +56,12 @@
 
 `mirdeep2/bin/miRDeep2.pl RP2H_input_for_mirDeep2.fasta reference/RprolixusV48.fa RP2H.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none`
 
+## Parsing the mirDeep2 resulting ARF files to Fasta using an in-house script
 
-### How to view the results?
+```Python
+python3 arf_to_fasta.py
 
-Look at the .html files inside the individual experiments to them in an interactive browser
-The same results are provided in a .csv file that can be opened in software like Microsoft/Excel or OpenOffice/Calc
+```
 
 * Sequences from RNA central: tax_string:"triatominae" and so_rna_type_name:"NcRNA"
 
