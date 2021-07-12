@@ -16,8 +16,8 @@ RP1G_mature['Sample'] = 'RP1G'
 RP1G_mature <- RP1G_mature %>%
   filter(`significant randfold p-value` == "yes") %>%
   filter(`miRDeep2 score` >= 1) %>%
-  filter(`mature read count` >=10) %>%
-  filter(`star read count` > 0)
+  filter(`mature read count` >= 10) %>%
+  filter(`star read count` >= 1)
 write.table(
   RP1G_mature, 
   file.path(getwd(), "files_pipeline", "RP1G_predicted_mature_novel_filtered.tab"), 
@@ -33,7 +33,7 @@ RP1G_mature_hypothetical <- RP1G_mature_hypothetical %>%
   filter(`significant randfold p-value` != "yes") %>%
   filter(`miRDeep2 score` < 1) %>%
   filter(`mature read count` < 10) %>%
-  filter(`star read count` <= 0)
+  filter(`star read count` < 1)
 write.table(
   RP1G_mature_hypothetical, 
   file.path(getwd(), "files_pipeline", "RP1G_predicted_mature_novel_filtered_hypothetical.tab"), 
@@ -50,8 +50,8 @@ RP2H_mature['Sample'] = 'RP2H'
 RP2H_mature <- RP2H_mature %>%
   filter(`significant randfold p-value` == "yes") %>%
   filter(`miRDeep2 score` >= 1) %>%
-  filter(`mature read count` >=10) %>%
-  filter(`star read count` > 0)
+  filter(`mature read count` >= 10) %>%
+  filter(`star read count` >= 1)
 write.table(
   RP2H_mature, 
   file.path(getwd(), "files_pipeline", "RP2H_predicted_mature_novel_filtered.tab"), 
@@ -67,7 +67,7 @@ RP2H_mature_hypothetical <- RP2H_mature_hypothetical %>%
   filter(`significant randfold p-value` != "yes") %>%
   filter(`miRDeep2 score` < 1) %>%
   filter(`mature read count` < 10) %>%
-  filter(`star read count` <= 0)
+  filter(`star read count` < 1)
 write.table(
   RP2H_mature_hypothetical, 
   file.path(getwd(), "files_pipeline", "RP2H_predicted_mature_novel_filtered_hypothetical.tab"), 
@@ -84,8 +84,8 @@ RPGland_mature['Sample'] = 'RPGland'
 RPGland_mature <- RPGland_mature %>%
   filter(`significant randfold p-value` == "yes") %>%
   filter(`miRDeep2 score` >= 1) %>%
-  filter(`mature read count` >=10) %>%
-  filter(`star read count` > 0)
+  filter(`mature read count` >= 10) %>%
+  filter(`star read count` >= 1)
 write.table(
   RPGland_mature, 
   file.path(getwd(), "files_pipeline", "RP-Gland_predicted_mature_novel_filtered.tab"), 
@@ -101,7 +101,7 @@ RPGland_mature_hypothetical <- RPGland_mature_hypothetical %>%
   filter(`significant randfold p-value` != "yes") %>%
   filter(`miRDeep2 score` < 1) %>%
   filter(`mature read count` < 10) %>%
-  filter(`star read count` <= 0)
+  filter(`star read count` < 1)
 write.table(
   RPGland_mature_hypothetical, 
   file.path(getwd(), "files_pipeline", "RP-Gland_predicted_mature_novel_filtered_hypothetical.tab"), 
