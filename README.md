@@ -1,7 +1,6 @@
 # Rhodnius prolixus miRNA project
 
 
-
 ### Creating the environment and installing the tools
 
 * [Conda environment](https://www.anaconda.com/products/individual)
@@ -9,56 +8,90 @@
 * [mirDeep2](https://www.mdc-berlin.de/content/mirdeep2-documentation) (version 0.1.3)
 * [Biopython](https://biopython.org) (version 1.78)
 
-`conda create -n bioinfo python=3.6`
+```Bash
+conda create -n bioinfo python=3.6
+```
 
-`conda activate bioinfo`
+```Bash
+conda activate bioinfo
+```
 
-`conda install -c bioconda seqkit`
+```Bash
+conda install -c bioconda seqkit
+```
 
-`conda install mirdeep2`
+```Bash
+conda install mirdeep2
+```
 
-`conda update mirdeep2`
+```Bash
+conda update mirdeep2
+```
 
-`conda install -c conda-forge biopython`
+```Bash
+conda install -c conda-forge biopython
+```
 
 
 ## Trimming fasta headers to avoid head length problems using mirDeep2
-`seqkit seq -i RprolixusV48.fa > out.fasta`
+
+```Bash
+seqkit seq -i RprolixusV48.fa > out.fasta
+```
 
 ## Parsing trimmed fastq files to fit them as fasta inputs for mirDeep2 using the in-house script *mirDepp2_fit_fastq_to_fasta.py*
 
-`python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP1G.fastq RP1G_input_for_mirDeep2.fasta RP1`
+```Bash
+python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP1G.fastq RP1G_input_for_mirDeep2.fasta RP1
+```
 
-`python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP2H.fastq RP2H_input_for_mirDeep2.fasta RP2`
+```Bash
+python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP2H.fastq RP2H_input_for_mirDeep2.fasta RP2
+```
 
-`python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RPGland.fastq RPGland_input_for_mirDeep2.fasta RPG`
+```Bash
+python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RPGland.fastq RPGland_input_for_mirDeep2.fasta RPG
+```
 
 ## Create reference indexes
 
-`bowtie-build --large-index --bmax 16777216 --dcv 256 --threads 4 reference/RprolixusV48.fa reference/RprolixusV48`
+```Bash
+bowtie-build --large-index --bmax 16777216 --dcv 256 --threads 4 reference/RprolixusV48.fa reference/RprolixusV48
+```
 
 ## Map reads to the Rhodnius prolixus genome (version 48) using mirDeep2 combined with a set of *Ecdysozoa* filtered miRNA downloaded from miRBase
 
 ### RPgland
 
-`mirdeep2/bin/mapper.pl RPGland_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RPGland.arf -o 4 -i -j -n -q -v`
+```Bash
+mirdeep2/bin/mapper.pl RPGland_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RPGland.arf -o 4 -i -j -n -q -v```
 
-`mirdeep2/bin/miRDeep2.pl RPGland_input_for_mirDeep2.fasta reference/RprolixusV48.fa RPGland.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none`
+```Bash
+mirdeep2/bin/miRDeep2.pl RPGland_input_for_mirDeep2.fasta reference/RprolixusV48.fa RPGland.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none
+```
 
 ### RP1G
-`mirdeep2/bin/mapper.pl RP1G_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RP1G.arf -o 4 -i -j -n -q -v`
+```Bash
+mirdeep2/bin/mapper.pl RP1G_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RP1G.arf -o 4 -i -j -n -q -v
+```
 
-`mirdeep2/bin/miRDeep2.pl RP1G_input_for_mirDeep2.fasta reference/RprolixusV48.fa RP1G.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none`
+```Bash
+mirdeep2/bin/miRDeep2.pl RP1G_input_for_mirDeep2.fasta reference/RprolixusV48.fa RP1G.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none
+```
 
 ### RP2H
 
-`mirdeep2/bin/mapper.pl RP2H_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RP2H.arf -o 4 -i -j -n -q -v`
+```Bash
+mirdeep2/bin/mapper.pl RP2H_input_for_mirDeep2.fasta -c -p reference/RprolixusV48 -t RP2H.arf -o 4 -i -j -n -q -v
+```
 
-`mirdeep2/bin/miRDeep2.pl RP2H_input_for_mirDeep2.fasta reference/RprolixusV48.fa RP2H.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none`
+```Bash
+mirdeep2/bin/miRDeep2.pl RP2H_input_for_mirDeep2.fasta reference/RprolixusV48.fa RP2H.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none
+```
 
 ## Parsing the mirDeep2 resulting ARF files to Fasta using an in-house script
 
-```Python
+```Bash
 python3 arf_to_fasta.py
 
 ```
