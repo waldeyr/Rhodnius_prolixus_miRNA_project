@@ -1,6 +1,11 @@
 # Rhodnius prolixus miRNA project
 
-![Rhodnius prolixus miRNA project](https://github.com/waldeyr/Rhodnius_prolixus_miRNA_project/raw/main/Diagrams/Pipeline.png)
+Thies repository is related to the manuscript **"Insights Into the miRNome Profiles from the Salivary Glands, Gut and Hemolymph of the Chagas Disease Vector *Rhodnius prolixus*"**.
+It contains scripts and some bioinformatics comands used to generate and anlyse data and plots.
+
+## Abstract
+microRNAs (miRNAs) are small non-coding RNAs that post-transcriptionally regulate gene expression by targeting mRNAs for degradation or translational repression. The growing interest in miRNAs over the last years has led to their description in numerous organisms, although there are no data on miRNAs in the Triatominae subfamily, the vectors of Trypanosoma cruzi, the causative agent of Chagas disease, which disables millions of people mainly in Latin America. Here, we provide the first insight into Rhodnius prolixus miRNome profiles (gut, hemolymph, and salivary glands tissues) using high-throughput sequencing. We identified, 52 mature miRNAs previously reported in Ecdysozoa taxa, including 39 ubiquitously expressed in the three tissues. In addition, 112, 73 and 78 novel miRNAs could be predicted in the gut, hemolymph, and salivary glands, respectively, from which 15 are shared among the three samples. The comprehensive resource of miRNAs from R. prolixus is available at NCBI (https://www.ncbi.nlm.nih.gov). To provide functional insight into miRNAs expression data, in silico analysis of the target genes of the top eight expressed miRNAs from salivary glands suggests R. prolixus may modulate the host’s gene expression at the post-transcriptional level. This study presents the first experimental evidence of miRNAs in a Triatominae species, disclosing these important regulatory molecules of vector biology. 
+
 
 ### Creating the environment and installing the tools
 
