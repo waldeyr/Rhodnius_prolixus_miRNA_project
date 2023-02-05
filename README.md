@@ -1,6 +1,9 @@
-# Rhodnius prolixus miRNA project
+# *Rhodnius prolixus* miRNA project
 
-Thies repository is related to the manuscript **"Insights Into the miRNome Profiles from the Salivary Glands, Gut and Hemolymph of the Chagas Disease Vector *Rhodnius prolixus*"**.
+
+![Rhodnius prolixus miRNA project](https://github.com/waldeyr/Rhodnius_prolixus_miRNA_project/blob/main/Diagrams/README.png)
+
+This repository is related to the manuscript **"Insights Into the miRNome Profiles from the Salivary Glands, Gut and Hemolymph of the Chagas Disease Vector *Rhodnius prolixus*"**.
 It contains scripts and some bioinformatics comands used to generate and anlyse data and plots.
 
 ## Abstract
