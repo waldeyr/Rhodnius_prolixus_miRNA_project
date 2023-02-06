@@ -138,12 +138,8 @@ blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_typ
 
 ## Filtering the valid results for miRNA (known and novel)
 
-This step consists in run the R scripts `Filter_predicted_mature_known.R` and `Filter_predicted_mature_novel.R``. The criteria for filtering are the same described in the manuscript.
+This step consists in run the R scripts `Filter_predicted_mature_known.R` and `Filter_predicted_mature_novel.R`. The criteria for filtering are the same described in the manuscript.
 
-## To run these commands it is necessary to download the large files:
-
-[Arf files](https://drive.google.com/drive/folders/1Ji4K8ozLo0RAAz9HTPWxXBO8aRr5IFKB?usp=share_link)
-[CSV files](https://drive.google.com/drive/folders/1bxiD8OJxTuaKQGhhE7JkTPazWcRga-g2?usp=share_link)
-[TXT files](https://drive.google.com/drive/folders/1YzTkRm1ZksuFG0UtFFgoFwNd_faVY5nb?usp=share_link)
+## To run these commands it is necessary to download some large files that will be available after the manuscript acceptance.
 
 The raw reads can be downloaded from NCBI from the links presented in the manuscript.
