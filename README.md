@@ -62,19 +62,19 @@ python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RP2H.fastq RP2H_input_for_mirDeep
 python3 mirDepp2_fit_fastq_to_fasta.py trimmed/RPGland.fastq RPGland_input_for_mirDeep2.fasta RPG
 ```
 
-## Parsing miRBase *Ecdysozoa* sequences to fit them as fasta inputs for mirDeep2 using the in-house script *adjustMirBaseEcdysozoaFastaHeaderFormirDeep2.py*
+## Getting and parsing miRBase *Ecdysozoa* sequences to fit them as fasta inputs for mirDeep2 using the in-house script *adjustMirBaseEcdysozoaFastaHeaderFormirDeep2.py*
 
 ```Bash
 python3 adjustMirBaseEcdysozoaFastaHeaderFormirDeep2.py
 ```
 
-## Create reference indexes
+## Create reference indexes for the *R. prolixus* genome
 
 ```Bash
 bowtie-build --large-index --bmax 16777216 --dcv 256 --threads 4 reference/RprolixusV48.fa reference/RprolixusV48
 ```
 
-## Map reads to the Rhodnius prolixus genome (version 48) using mirDeep2 combined with a set of *Ecdysozoa* filtered miRNA downloaded from miRBase
+## Map reads to the *R. prolixus* genome (version 48) using mirDeep2 combined with a set of *Ecdysozoa* filtered miRNA downloaded from miRBase
 
 ### RPgland
 
@@ -105,14 +105,14 @@ mirdeep2/bin/mapper.pl RP2H_input_for_mirDeep2.fasta -c -p reference/RprolixusV4
 mirdeep2/bin/miRDeep2.pl RP2H_input_for_mirDeep2.fasta reference/RprolixusV48.fa RP2H.arf mirBase_mature_Ecdysozoa_for_meerDeep2.fasta none none
 ```
 
-## Parsing the mirDeep2 resulting ARF files to Fasta using an in-house script
+## Parsing the mirDeep2 resulting ARF files to Fasta using the in-house script *arf_to_fasta.py*
 
 ```Bash
 python3 arf_to_fasta.py
 
 ```
 
-## Get a tab separated file with miRBase *Ecdysozoa* Species names using the in-house script *getMirBaseEcdysozoaSpecies.py*
+## Getting and parsing to a tab separated file a miRBase *Ecdysozoa* Species names on a file using the in-house script *getMirBaseEcdysozoaSpecies.py*
 
 ```Bash
 python3 getMirBaseEcdysozoaSpecies.py
@@ -135,3 +135,7 @@ blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_typ
 blastn -task blastn-short -db ../RnaCentral/tax_stringtriatominae_AND_so_rna_type_nameNcRNA  -query RP2H_mapped.fasta  -max_target_seqs 5 -max_hsps 1 -evalue 1e-2 -perc_identity 80 -num_threads 4 -outfmt 6 -out RP2H_mapped_blast_results.tab
 ```
 
+
+## Filtering the valid results for miRNA (known and novel)
+
+This step consists in run the R scripts `Filter_predicted_mature_known.R` and `Filter_predicted_mature_novel.R``. The criteria for filtering are the same described in the manuscript.
