@@ -1,4 +1,5 @@
 library(readr)
+library(tidyr)
 library(dplyr)
 library(ggplot2)
 library(stringr)
@@ -346,13 +347,9 @@ write.table(
 ################################################################################
 # THE PLOT:  Small RNAs diversity among the tissues
 ################################################################################
-# bold.miRNA <- c("R. prolixus conserved miRNA", "R. prolixus novel miRNA")
-# bold.labels <- ifelse(levels(All_pie$rna_type) %in% bold.miRNA, yes = "bold", no = "plain")
-plot <- ggplot(All_pie, aes(x = reorder(rna_type, -n), fill = rna_type, group = rna_type, weight = per) ) +
+plot <- ggplot(All_pie, aes(x = reorder(rna_type, -per), fill = rna_type, group = rna_type, weight = per) ) +
  geom_bar(alpha=0.65) +
  scale_y_continuous(limits = c(0,0.6)) +
-# scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x  ),
-#                 labels = trans_format("log10", math_format(10^.x  ))) +
  scale_fill_viridis_d(option = "viridis") +
  labs(x = "Small RNA", y = "Small RNA distribution across tissues (%)") +
  coord_flip() +
@@ -373,7 +370,8 @@ plot <- ggplot(All_pie, aes(x = reorder(rna_type, -n), fill = rna_type, group = 
    ) +
  facet_wrap(
    vars(tissue), 
-   #scales = "free", 
+   drop = TRUE,
+   scales = "free", 
    ncol=1, 
    strip.position = "left"
    )
